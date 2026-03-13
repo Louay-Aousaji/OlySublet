@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { requireUser } from '@/lib/auth';
-import { supabaseAdmin } from '@/lib/supabaseAdmin';
+import { requireUser } from '../../../../lib/auth.ts';
+import { supabaseAdmin } from '../../../../lib/supabaseAdmin';
 
 export async function GET(
   _req: NextRequest,

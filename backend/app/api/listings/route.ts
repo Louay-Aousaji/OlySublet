@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { requireUser } from '@/lib/auth';
-import { supabaseAdmin } from '@/lib/supabaseAdmin';
-import { listingSchema } from '@/lib/validation';
-import { CONTRACT_STATUS, LISTING_STATUS } from '@/lib/constants';
+import { requireUser } from '../../../lib/auth';
+import { supabaseAdmin } from '../../../lib/supabaseAdmin';
+import { listingSchema } from '../../../lib/validation';
+import { CONTRACT_STATUS, LISTING_STATUS } from '../../../lib/constants';
 
 export async function GET() {
   const { data, error } = await supabaseAdmin

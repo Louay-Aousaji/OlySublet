@@ -12,7 +12,7 @@ export async function getServerSupabase() {
       global: {
         headers: accessToken
           ? {
-              Authorization: Bearer ${accessToken},
+              Authorization: `Bearer ${accessToken}`,
             }
           : {},
       },

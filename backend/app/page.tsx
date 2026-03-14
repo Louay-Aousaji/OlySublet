@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 
 function Badge({ children, tone = 'default' }) {
   const tones = {
@@ -610,8 +610,44 @@ export default function OlyStudentSubletFrontend() {
     []
   );
 
+  const [listings, setListings] = useState([]);
+
   const [activePage, setActivePage] = useState('browse');
   const [selectedListing, setSelectedListing] = useState(sampleListings[0]);
+
+  useEffect(() => {
+  async function loadListings() {
+    try {
+      const res = await fetch('/api/listings');
+      const data = await res.json();
+
+      const formatted = data.listings.map((l) => ({
+        id: l.id,
+        title: l.title,
+        section: l.section,
+        roomType: l.room_type,
+        pricingType: l.pricing_type === 'monthly' ? 'Per month' : 'Per night',
+        price: `€${l.price}`,
+        dates: `${l.available_from} – ${l.available_until}`,
+        size: l.room_size,
+        verified: l.contract_status === 'verified',
+        contractStatus: l.contract_status,
+        landlord: l.landlord_name,
+        photoLabel: 'Room photo',
+        furnished: l.furnished,
+        description: l.description,
+        included: []
+      }));
+
+      setListings(formatted);
+
+    } catch (err) {
+      console.error('Failed to load listings', err);
+    }
+  }
+
+  loadListings();
+}, []);
 
   const openDetails = (listing) => {
     setSelectedListing(listing);
@@ -632,7 +668,7 @@ export default function OlyStudentSubletFrontend() {
       return <ChatPage listing={selectedListing} onBackToDetails={() => setActivePage('details')} />;
     }
     if (activePage === 'admin') return <AdminVerificationDashboard />;
-    return <BrowseListingsPage listings={sampleListings} onOpenDetails={openDetails} />;
+    return <BrowseListingsPage listings={listings} onOpenDetails={openDetails} />;
   };
 
   return (

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/LLL/OlySublet/backend/proxy.ts"],"sourcesContent":["import { NextResponse } from 'next/server';\nimport type { NextRequest } from 'next/server';\n\nexport function middleware(_req: NextRequest) {\n  return NextResponse.next();\n}\n\nexport function proxy(request: Request) {\n  return NextResponse.next();\n}\n\nexport const config = {\n  matcher: ['/api/:path*'],\n};"],"names":[],"mappings":";;;;;;;;AAAA;;AAGO,SAAS,WAAW,IAAiB;IAC1C,OAAO,yJAAY,CAAC,IAAI;AAC1B;AAEO,SAAS,MAAM,OAAgB;IACpC,OAAO,yJAAY,CAAC,IAAI;AAC1B;AAEO,MAAM,SAAS;IACpB,SAAS;QAAC;KAAc;AAC1B"}}]
+}

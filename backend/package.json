@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "next dev",
+    "dev": "node node_modules/next/dist/bin/next dev",
     "build": "next build",
     "start": "next start",
     "env": "node -e \"require('dotenv').config({ path: '.env.local' }); \""

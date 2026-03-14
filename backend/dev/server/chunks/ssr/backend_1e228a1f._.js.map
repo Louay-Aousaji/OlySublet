@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/LLL/OlySublet/backend/app/layout.tsx"],"sourcesContent":["\nimport './globals.css';\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <html lang=\"en\">\n      <body>\n        {children}\n      </body>\n    </html>\n  );\n}"],"names":[],"mappings":";;;;;;;AAGe,SAAS,WAAW,EACjC,QAAQ,EAGT;IACC,qBACE,yPAAC;QAAK,MAAK;kBACT,cAAA,yPAAC;sBACE;;;;;;;;;;;AAIT"}},
+    {"offset": {"line": 31, "column": 0}, "map": {"version":3,"sources":["file:///C:/LLL/OlySublet/backend/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,oIACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}
